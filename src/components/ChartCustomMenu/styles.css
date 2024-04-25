@@ -1,0 +1,37 @@
+.chart-custom-menu {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.chart-custom-menu label {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.chart-custom-menu input,
+.chart-custom-menu select {
+    width: 100%;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.chart-custom-menu button {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.chart-custom-menu button:hover {
+    background-color: #0056b3;
+}
