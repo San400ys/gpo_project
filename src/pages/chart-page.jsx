@@ -5,10 +5,12 @@ import {useEffect, useState} from "react";
 import ReactECharts from 'echarts-for-react';
 import {Filters} from "../components/filters";
 import {Table} from "../components/table"
+import {Loader} from "../components/loader"
 import {useDispatch} from "react-redux";
 
 export const ChartPage = () => {
     const dispatch = useDispatch()
+    const [isLoading, setIsLoading] = useState(true);
     const {chartId} = useParams()
     const [chart, setChart] = useState({})
 
@@ -17,29 +19,27 @@ export const ChartPage = () => {
             .fetch("/charts?id=" + chartId)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
                 setChart(data[0]);
+                setIsLoading(false);
             })
     }, []);
 
-    const AComp = () => chart?.option ? <><Filters options={chart.option}/>
-        <ChartInf>
-            <ReactECharts
-                option={chart.option}
-                notMerge={true}
-                lazyUpdate={true}
-                style={{width: '1040px', height: '600px'}}
-            />
-            <Table table={chart.option}/>
-        </ChartInf></> : 'Loading...'
-
     return (
         <Page>
-            <Container>
+            {isLoading ? <Loader/> : <Container>
                 <View>
-                    <AComp/>
+                    <Filters options={chart.option}/>
+                    <ChartInf>
+                        <ReactECharts
+                            option={chart.option}
+                            notMerge={true}
+                            lazyUpdate={true}
+                            style={{width: '1040px', height: '600px'}}
+                        />
+                        <Table table={chart.option}/>
+                    </ChartInf>
                 </View>
-            </Container>
+            </Container>}
         </Page>
     )
 }
