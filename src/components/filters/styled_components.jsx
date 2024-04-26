@@ -6,9 +6,6 @@ export const Main = styled.div`
   flex-direction: column;
   padding: 20px;
 `
-export const Input = styled.input`
-      
-`
 export const FilterTitle = styled.p`
   font-size: 20px;
   font-weight: 400;

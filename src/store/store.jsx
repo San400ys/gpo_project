@@ -1,8 +1,10 @@
 import { createStore, combineReducers } from "redux"
-import { allReducer } from "./all-reducer"
+import { customChartsReducer } from "./custom-charts-reducer"
+import {allChartsReducer} from "./all-charts-reducer";
 
 const Reducers = combineReducers({
-    all: allReducer,
+    custom: customChartsReducer,
+    all: allChartsReducer
 })
 
 export const store = createStore(Reducers)

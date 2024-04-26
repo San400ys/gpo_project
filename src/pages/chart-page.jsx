@@ -1,27 +1,26 @@
 import {Page, Container, View, ChartInf} from "../components/styled-components"
 import {useParams} from "react-router-dom"
-import {request} from "../api/request";
 import {useEffect, useState} from "react";
 import ReactECharts from 'echarts-for-react';
 import {Filters} from "../components/filters";
 import {Table} from "../components/table"
 import {Loader} from "../components/loader"
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 export const ChartPage = () => {
-    const dispatch = useDispatch()
     const [isLoading, setIsLoading] = useState(true);
     const {chartId} = useParams()
     const [chart, setChart] = useState({})
 
+    const dispatch = useDispatch()
+    const charts = useSelector(
+        (state) => state.all.all_charts
+    );
     useEffect(() => {
-        request
-            .fetch("/charts?id=" + chartId)
-            .then((response) => response.json())
-            .then((data) => {
-                setChart(data[0]);
-                setIsLoading(false);
-            })
+        const temp = charts.filter((el) => el.id === Number(chartId))
+        console.log(temp)
+        setChart(temp[0])
+        setIsLoading(false)
     }, []);
 
     return (

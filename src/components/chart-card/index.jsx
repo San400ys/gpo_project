@@ -8,12 +8,12 @@ export const ChartCard = ({chart}) => {
     const nav = useNavigate();
     const chartType = () => {
         switch (chart.type){
-            case "Line":return(<LineChart/>);
-            case "Bar":return(<BarChart/>);
-            case "Pie":return(<PieChart/>);
+            case "line":return(<LineChart/>);
+            case "bar":return(<BarChart/>);
+            case "pie":return(<PieChart/>);
         }
     }
-
+    let i=0;
     return (
         <Card onClick={() => nav('chart/'+chart.id, { replace: false })}>
             <Left>
@@ -22,7 +22,7 @@ export const ChartCard = ({chart}) => {
             </Left>
             <Right>
                 {chart.inf.map((el) => (
-                    <Text><Span>{el.name} </Span>{el.content}</Text>
+                    <Text key={i++}><Span>{el.name} </Span>{el.content}</Text>
                 ))}
             </Right>
         </Card>

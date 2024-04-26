@@ -5,7 +5,7 @@ export const Page = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 20px 0 20px;
+  margin: 15px 0 15px;
   overflow: hidden;
 `
 export const Container = styled.div`
