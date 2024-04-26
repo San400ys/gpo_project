@@ -4,9 +4,12 @@ export const Card = styled.div`
   width: 100%;
   height: 200px;
   display: flex;
-  justify-content: space-between;
+  gap: 50px;
   align-items: center;
   border-bottom: solid 1px;
+  &:last-child{
+    border: none;
+  }
   &:hover {
     background: #d9d9d9;
   }
@@ -14,10 +17,13 @@ export const Card = styled.div`
     background: #8c8c8c;
   }
 `
-export const Inf = styled.div`
+export const Left = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   gap:20px;
+  border-right: 1px solid;
+  width: 500px;
 `
 export const Svg = styled.div`
   display: flex;
@@ -32,4 +38,15 @@ export const Title = styled.p`
   font-size: 20px;
   font-weight: 600;
   text-align: center;
+`
+export const Right = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+`
+export const Text = styled.p`
+  font-size: 16px;
+`
+export const Span = styled.span`
+  font-weight: 600;
 `

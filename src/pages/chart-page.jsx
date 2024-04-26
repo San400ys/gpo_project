@@ -36,7 +36,7 @@ export const ChartPage = () => {
                             lazyUpdate={true}
                             style={{width: '1040px', height: '600px'}}
                         />
-                        <Table table={chart.option}/>
+                        {/*<Table table={chart.option}/>*/}
                     </ChartInf>
                 </View>
             </Container>}

@@ -38,23 +38,31 @@ export const Filters = () => {
             />
             <FilterTitle>Ось Y</FilterTitle>
             <Select
-                defaultValue="Дни недели"
+                defaultValue="Тысячи"
                 style={{
                     width: 260, marginBottom: "20px"
                 }}
                 onChange={handleChange}
                 options={[
                     {
-                        value: 'Дни недели',
-                        label: 'Дни недели',
+                        value: 'Сотни',
+                        label: 'Сотни',
                     },
                     {
-                        value: 'Месяцы',
-                        label: 'Месяцы',
+                        value: 'Тысячи',
+                        label: 'Тысячи',
                     },
                     {
-                        value: 'Года',
-                        label: 'Года',
+                        value: 'Десятки тысяч',
+                        label: 'Десятки тысяч',
+                    },
+                    {
+                        value: 'Сотни тысяч',
+                        label: 'Сотни тысяч',
+                    },
+                    {
+                        value: 'Миллионы',
+                        label: 'Миллионы',
                     }
                 ]}
             />
