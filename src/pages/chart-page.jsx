@@ -5,7 +5,7 @@ import ReactECharts from 'echarts-for-react';
 import {Filters} from "../components/filters";
 import {Table} from "../components/table"
 import {Loader} from "../components/loader"
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch, useSelector, } from "react-redux";
 
 export const ChartPage = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +27,7 @@ export const ChartPage = () => {
         <Page>
             {isLoading ? <Loader/> : <Container>
                 <View>
-                    <Filters options={chart.option}/>
+                    <Filters chart={chart}/>
                     <ChartInf>
                         <ReactECharts
                             option={chart.option}

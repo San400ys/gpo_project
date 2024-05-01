@@ -13,6 +13,15 @@ export const allChartsReducer = (state = initialState, action) => {
                     (chart) => chart.id !== action.chart.id
                 )
             }
+        case "CHANGE_CHART":
+            return {
+                ...state,
+                all_charts: state.all_charts.map((chart) => {
+                    if(chart.id === action.chart.id){
+                        chart = action.chart;
+                    }
+                })
+            }
         default:
             return state
     }
@@ -24,5 +33,9 @@ export const addChartAction = (value) => ({
 })
 export const deleteChartAction = (value) => ({
     type: "DELETE_CHART",
+    chart: value
+})
+export const changeChartAction = (value) => ({
+    type: "CHANGE_CHART",
     chart: value
 })
