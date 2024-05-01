@@ -13,11 +13,30 @@ export const Filters = ({chart}) => {
     const bgColor = useMemo(() => (typeof color === 'string' ? color : color.toHexString()), [color]);
 
     const handleChange = () => {
-        chart.option.series[0].type = chartType;
-        chart.option.series[0].color = typeof color === 'string' ? color : color.toHexString();
+        const updatedChart = {
+            ...chart,
+            option: {
+                ...chart.option,
+                xAxis: {
+                    ...chart.option.xAxis,
+                    type: xAxis
+                },
+                yAxis: {
+                    ...chart.option.yAxis,
+                    type: yAxis
+                },
+                series: [
+                    {
+                        ...chart.option.series[0],
+                        type: chartType,
+                        color: typeof color === 'string' ? color : color.toHexString()
+                    }
+                ]
+            }
+        };
         dispatch(deleteChartAction(chart));
-        dispatch(addChartAction(chart));
-        console.log(chart)
+        dispatch(addChartAction(updatedChart));
+        console.log(updatedChart)
     }
 
     return (
@@ -61,12 +80,12 @@ export const Filters = ({chart}) => {
                 </Select>
                 <FilterTitle>Цвет</FilterTitle>
                 <ColorPicker value={color} onChange={setColor}>
-                    <Button type="primary" style={{backgroundColor: bgColor}}>
+                    <Button style={{backgroundColor: bgColor}}>
                         Выбрать
                     </Button>
                 </ColorPicker>
             </Block>
-            <Button type="primary" onClick={() => handleChange()}>Применить</Button>
+            <Button onClick={() => handleChange()}>Применить</Button>
         </Main>
     )
 }

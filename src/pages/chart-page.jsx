@@ -21,13 +21,13 @@ export const ChartPage = () => {
         console.log(temp)
         setChart(temp[0])
         setIsLoading(false)
-    }, []);
+    }, [charts, chartId]);
 
     return (
         <Page>
             {isLoading ? <Loader/> : <Container>
                 <View>
-                    <Filters chart={chart}/>
+                    <Filters key={chartId} chart={chart}/>
                     <ChartInf>
                         <ReactECharts
                             option={chart.option}
