@@ -52,9 +52,9 @@ export const Mymodal = ({open, onCreate, onCancel}) => {
                     ]}
                 >
                     <Select>
-                        <Select.Option value="line">Line</Select.Option>
-                        <Select.Option value="bar">Bar</Select.Option>
-                        <Select.Option value="pie">Pie</Select.Option>
+                        <Select.Option value="line">Линейный</Select.Option>
+                        <Select.Option value="bar">По столбцам</Select.Option>
+                        <Select.Option value="pie">Пирог</Select.Option>
                     </Select>
                 </Form.Item>
                 <Form.Item

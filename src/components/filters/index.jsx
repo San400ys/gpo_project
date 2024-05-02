@@ -36,7 +36,6 @@ export const Filters = ({chart}) => {
         };
         dispatch(deleteChartAction(chart));
         dispatch(addChartAction(updatedChart));
-        console.log(updatedChart)
     }
 
     return (
