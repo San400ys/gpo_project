@@ -1,4 +1,4 @@
-import {Page, Container, View, ChartInf} from "../components/styled-components"
+import {Page, Container, View, ChartInf, Recomendation, Span} from "../components/styled-components"
 import {useParams} from "react-router-dom"
 import {useEffect, useState} from "react";
 import ReactECharts from 'echarts-for-react';
@@ -35,7 +35,8 @@ export const ChartPage = () => {
                             lazyUpdate={true}
                             style={{width: '1040px', height: '600px'}}
                         />
-                        {/*<Table table={chart.option}/>*/}
+                        <Recomendation><Span>Рекомендация:</Span> Выгоднее продавать товары <Span>Категория 1</Span></Recomendation>
+                        <Table table={chart.option}/>
                     </ChartInf>
                 </View>
             </Container>}

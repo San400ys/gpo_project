@@ -3,9 +3,9 @@ enum GENDER {
     J = 'J'
 }
 
-type Child = {
-    ...
-}
+// type Child = {
+//     ...
+// }
 
 
 type User = {
@@ -17,12 +17,12 @@ type User = {
     isEblan: boolean;
     onCancel: (isOpen: boolean) => GENDER
     // children?: Child[] | undefined | null
-    children?: Child[] | null
+    // children?: Child[] | null
 }
 
-if (user.gender === GENDER.M ) {
-    ...
-}
+// if (user.gender === GENDER.M ) {
+//     ...
+// }
 
 
 export type AProps = {
@@ -34,11 +34,11 @@ const users = [
     {name: '1', age: 4, gender: GENDER.J, isEblan: true}
 ]
 
-const onCalcel = (isOpen: boolean) => {
-    ...
-
-    return GENDER
-}
+// const onCalcel = (isOpen: boolean) => {
+//     ...
+//
+//     return GENDER
+// }
 
 
 // interface

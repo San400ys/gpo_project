@@ -45,3 +45,10 @@ export const ChartInf = styled.div`
   align-items: center;
   margin:20px 0;
 `
+export const Recomendation = styled.div`
+  margin: 0 0 20px;
+  font-size: 20px;
+`
+export const Span = styled.span`
+  font-weight: 600;
+`
